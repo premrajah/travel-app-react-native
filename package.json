@@ -10,8 +10,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@babel/eslint-parser": "^7.24.5",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-native": "^4.1.0",
     "react": "18.2.0",
-    "react-native": "0.74.1"
+    "react-native": "0.74.1",
+    "save-dev": "^0.0.1-security"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
