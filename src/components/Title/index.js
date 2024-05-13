@@ -1,4 +1,3 @@
-import React from 'react'
 import { Text } from "react-native"
 import styles from "./styles";
 
@@ -9,4 +8,4 @@ const Title = ({ text = "Default Text1", style }) => {
 }
 
 
-export default Title
+export default Title;
