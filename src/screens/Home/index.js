@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, SafeAreaView, View } from "react-native"
+import { FlatList, SafeAreaView, View, Text } from "react-native"
 import Title from "../../components/Title"
 import styles from "./styles"
 import Categories from "../../components/Categories"
 import AttractionCard from "../../components/AttractionCard"
 import jsonData from "../../data/attractions.json";
+import categories from "../../data/categories.json"
+
+const All = "All";
 
 const HomeScreen = () => {
 
@@ -15,6 +18,16 @@ const HomeScreen = () => {
         setData(jsonData)
     }, [])
 
+    useEffect(() => {
+        if (selectedCategory === All) {
+            setData(jsonData)
+        } else {
+            const filteredData = jsonData?.filter((item) => item?.categories.includes(selectedCategory))
+
+            setData(filteredData)
+        }
+    }, [selectedCategory])
+
     return (
         <SafeAreaView style={styles.container}>
             <FlatList
@@ -22,6 +35,7 @@ const HomeScreen = () => {
                 data={data}
                 numColumns={2}
                 style={{ flexGrow: 1 }}
+                ListEmptyComponent={(<Text style={styles.emptyText}>No Categories Found</Text>)}
                 ListHeaderComponent={(
                     <>
                         <View style={{ margin: 32 }}>
@@ -33,7 +47,7 @@ const HomeScreen = () => {
 
                         <Categories
                             selectedCategory={selectedCategory}
-                            categories={["All", "Popular", "Historical", "Tourist", "Low Cost", "Exclusive", "Random"]}
+                            categories={[All, ...categories]}
                             onCategoryPress={setSelectedCategory} />
                     </>
                 )}

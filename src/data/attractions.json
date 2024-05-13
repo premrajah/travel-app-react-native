@@ -37,7 +37,8 @@
             "https://upload.wikimedia.org/wikipedia/commons/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg"
         ],
         "categories": [
-            "Historical"
+            "Historical",
+            "Recommended"
         ]
     },
     {
@@ -56,7 +57,9 @@
         "images": [
             "https://www.travelandleisure.com/thmb/wdUcyBQyQ0wUVs4wLahp0iWgZhc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/taj-mahal-agra-india-TAJ0217-9eab8f20d11d4391901867ed1ce222b8.jpg"
         ],
-        "categories": []
+        "categories": [
+            "Popular"
+        ]
     },
     {
         "id": 4,
@@ -74,7 +77,9 @@
         "images": [
             "https://www.thecolosseum.org/wp-content/uploads/2017/09/Colosseum-optimized.jpg"
         ],
-        "categories": []
+        "categories": [
+            "Most Visited"
+        ]
     },
     {
         "id": 5,
