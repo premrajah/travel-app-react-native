@@ -1,13 +1,19 @@
-import React, { useState } from 'react'
-import { SafeAreaView, View, Text } from "react-native"
+import React, { useEffect, useState } from 'react'
+import { SafeAreaView, View, Text, ScrollView } from "react-native"
 import Title from "../../components/Title"
 import styles from "./styles"
 import Categories from "../../components/Categories"
 import AttractionCard from "../../components/AttractionCard"
+import jsonData from "../../data/attrractions.json";
 
 const HomeScreen = () => {
 
-    const [selectedCategory, setSelectedCategory] = useState("All")
+    const [selectedCategory, setSelectedCategory] = useState("All");
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        setData(jsonData)
+    }, [])
 
     return (
         <SafeAreaView>
@@ -22,10 +28,15 @@ const HomeScreen = () => {
                     categories={["All", "Popular", "Historical", "Tourist", "Low Cost", "Exclusive"]}
                     onCategoryPress={setSelectedCategory} />
 
-                <View style={styles.row}>
-                    <AttractionCard imageSrc="https://fullsuitcase.com/wp-content/uploads/2021/01/Best-things-to-do-in-London-top-sights-and-attractions.jpg.webp" title="Tower Bridge" subtitle="London" />
-                    <AttractionCard imageSrc="https://fullsuitcase.com/wp-content/uploads/2021/01/Best-things-to-do-in-London-top-sights-and-attractions.jpg.webp" title="Tower Bridge" subtitle="France" />
-                </View>
+                <ScrollView contentContainerStyle={styles.row}>
+                    {data?.map((item, index) => (
+                        <AttractionCard
+                            style={(index % 2 === 0) ? { marginRight: 12 } : {}}
+                            imageSrc={item.images?.length ? item.images[0] : null}
+                            title={item.name}
+                            subtitle={item.city} />
+                    ))}
+                </ScrollView>
             </View>
         </SafeAreaView>
     )

@@ -1,0 +1,97 @@
+[
+    {
+        "id": 1,
+        "name": "Eiffel Tower",
+        "city": "Paris",
+        "country": "France",
+        "entry_price": "€25 (adults), €12.50 (children)",
+        "opening_time": "09:00",
+        "closing_time": "23:45",
+        "address": "Champ de Mars, 5 Avenue Anatole Lehideux, 75007 Paris, France",
+        "coordinates": {
+            "lon": 2.294481,
+            "lat": 48.85836
+        },
+        "images": [
+            "https://www.travelandleisure.com/thmb/SPUPzO88ZXq6P4Sm4mC5Xuinoik=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg"
+        ],
+        "categories": [
+            "Historical",
+            "Landmark"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Great Wall of China",
+        "city": "Various locations",
+        "country": "China",
+        "entry_price": "¥40-¥60 (depending on section)",
+        "opening_time": "08:00",
+        "closing_time": "17:00",
+        "address": "Mutianyu Great Wall, Beijing 101300, China",
+        "coordinates": {
+            "lon": 116.570527,
+            "lat": 40.431944
+        },
+        "images": [
+            "https://upload.wikimedia.org/wikipedia/commons/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg"
+        ],
+        "categories": [
+            "Historical"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Taj Mahal",
+        "city": "Agra",
+        "country": "India",
+        "entry_price": "₹1250 (foreigners), ₹220 (Indians)",
+        "opening_time": "06:00",
+        "closing_time": "17:00",
+        "address": "Dharmapuri, Agra, 282001 India",
+        "coordinates": {
+            "lon": 78.042128,
+            "lat": 27.175369
+        },
+        "images": [
+            "https://www.travelandleisure.com/thmb/wdUcyBQyQ0wUVs4wLahp0iWgZhc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/taj-mahal-agra-india-TAJ0217-9eab8f20d11d4391901867ed1ce222b8.jpg"
+        ],
+        "categories": []
+    },
+    {
+        "id": 4,
+        "name": "Colosseum",
+        "city": "Rome",
+        "country": "Italy",
+        "entry_price": "€16",
+        "opening_time": "08:30",
+        "closing_time": "19:15",
+        "address": "Piazza del Colosseo, 1, 00184 Roma, Italy",
+        "coordinates": {
+            "lon": 12.483372,
+            "lat": 41.89021
+        },
+        "images": [
+            "https://www.thecolosseum.org/wp-content/uploads/2017/09/Colosseum-optimized.jpg"
+        ],
+        "categories": []
+    },
+    {
+        "id": 5,
+        "name": "Christ the Redeemer",
+        "city": "Rio de Janeiro",
+        "country": "Brazil",
+        "entry_price": "R$88 (adults), R$44 (children)",
+        "opening_time": "08:00",
+        "closing_time": "17:00",
+        "address": "Parque Nacional da Tijuca – Alto da Boa Vista, Rio de Janeiro, Brazil",
+        "coordinates": {
+            "lon": -43.210485,
+            "lat": -22.951703
+        },
+        "images": [
+            "https://www.fodors.com/wp-content/uploads/2022/07/HERO-shutterstock_1283692720.jpg"
+        ],
+        "categories": []
+    }
+]

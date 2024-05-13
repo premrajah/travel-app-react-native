@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
         marginBottom: 18
     },
     row: {
-        flexDirection: "row"
+        flexDirection: "row",
+        flexWrap: "wrap"
     }
 });
 
