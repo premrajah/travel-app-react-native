@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageBackground, SafeAreaView, Text } from "react-native"
+import { Image, ImageBackground, Pressable, SafeAreaView, Text, View } from "react-native"
 import styles from "./styles"
 import { useNavigation } from "@react-navigation/native";
 
@@ -18,9 +18,22 @@ const AttractionDetailsScreen = ({ route }) => {
             <ImageBackground
                 source={{ uri: mainImage }}
                 imageStyle={{ borderRadius: 20 }}
-                style={styles.mainImage}
-            >
-                <Text onPress={() => onBack()} style={{ margin: 34 }}>BACK</Text>
+                style={styles.mainImage}>
+                <View style={styles.header}>
+                    <Pressable hitSlop={8} onPress={() => onBack()}>
+                        <Image style={styles.icon} source={require("../../assets/back.png")} />
+                    </Pressable>
+                    <Pressable hitSlop={8}>
+                        <Image style={styles.icon} source={require("../../assets/share.png")} />
+                    </Pressable>
+                </View>
+
+                <View style={styles.footer}>
+                    {item?.images?.length ? item?.images?.map((image, index) => (
+                        <Image key={index} source={{ uri: image }} style={styles.minImages} />
+                    )) : null}
+                </View>
+
             </ImageBackground>
             <Text>{item.name}</Text>
         </SafeAreaView>
