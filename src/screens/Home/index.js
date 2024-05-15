@@ -9,7 +9,7 @@ import categories from "../../data/categories.json"
 
 const All = "All";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
 
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [data, setData] = useState([]);
@@ -57,7 +57,8 @@ const HomeScreen = () => {
                         style={(index % 2 === 0) ? { marginRight: 20 } : {}}
                         imageSrc={item.images?.length ? item.images[0] : null}
                         title={item.name}
-                        subtitle={item.city} />
+                        subtitle={item.city}
+                        onPress={() => navigation.navigate("AttractionDetails")} />
                 )}
             />
         </SafeAreaView>
