@@ -6,11 +6,16 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import HomeScreen from './src/screens/Home';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
-  return <HomeScreen />;
+  return (
+    <NavigationContainer>
+      <HomeScreen />;
+    </NavigationContainer>
+  );
 };
 
 const styles = StyleSheet.create({
