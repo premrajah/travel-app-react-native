@@ -8,9 +8,13 @@ const AttractionDetailsScreen = ({ route }) => {
     const { item } = route?.params || {};
     const navigation = useNavigation();
 
+    const onBack = () => {
+        navigation.goBack();
+    }
+
     return (
         <SafeAreaView style={styles.container}>
-            <Text onPress={() => navigation.goBack()} style={{ margin: 34 }}>BACK</Text>
+            <Text onPress={() => onBack()} style={{ margin: 34 }}>BACK</Text>
             <Text>{item.name}</Text>
         </SafeAreaView>
     )
