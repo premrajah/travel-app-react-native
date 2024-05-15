@@ -59,7 +59,7 @@ const HomeScreen = () => {
                         imageSrc={item.images?.length ? item.images[0] : null}
                         title={item.name}
                         subtitle={item.city}
-                        onPress={() => navigation.navigate("AttractionDetails")} />
+                        onPress={() => navigation.navigate("AttractionDetails", { item })} />
                 )}
             />
         </SafeAreaView>
