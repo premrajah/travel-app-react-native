@@ -3,7 +3,7 @@ import { SafeAreaView, Text } from "react-native"
 import styles from "./styles"
 
 
-const AttractionDetailScreen = () => {
+const AttractionDetailsScreen = () => {
     return (
         <SafeAreaView style={styles.container}>
             <Text>Hello Attraction</Text>
@@ -11,4 +11,4 @@ const AttractionDetailScreen = () => {
     )
 }
 
-export default React.memo(AttractionDetailScreen)
+export default React.memo(AttractionDetailsScreen)

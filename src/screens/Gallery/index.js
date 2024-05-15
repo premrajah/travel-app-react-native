@@ -3,7 +3,7 @@ import { SafeAreaView, Text } from "react-native"
 import styles from "./styles"
 
 
-const Gallery = () => {
+const GalleryScreen = () => {
     return (
         <SafeAreaView style={styles.container}>
             <Text>Hello Attraction</Text>
@@ -11,4 +11,4 @@ const Gallery = () => {
     )
 }
 
-export default React.memo(Gallery)
+export default React.memo(GalleryScreen)
