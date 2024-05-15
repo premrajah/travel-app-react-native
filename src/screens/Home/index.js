@@ -6,11 +6,12 @@ import Categories from "../../components/Categories"
 import AttractionCard from "../../components/AttractionCard"
 import jsonData from "../../data/attractions.json";
 import categories from "../../data/categories.json"
+import { useNavigation } from "@react-navigation/native"
 
 const All = "All";
 
-const HomeScreen = ({ navigation }) => {
-
+const HomeScreen = () => {
+    const navigation = useNavigation();
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [data, setData] = useState([]);
 
