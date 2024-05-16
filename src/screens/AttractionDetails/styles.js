@@ -75,10 +75,8 @@ const styles = StyleSheet.create({
         fontWeight: "400",
         color: "#000",
         marginTop: 5
-    },
-    price: {
-
     }
+
 });
 
 export default styles;

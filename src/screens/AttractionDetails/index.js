@@ -3,6 +3,7 @@ import { Image, ImageBackground, Pressable, SafeAreaView, Text, View } from "rea
 import styles from "./styles"
 import { useNavigation } from "@react-navigation/native";
 import Title from "../../components/Title";
+import InfoCard from "../../components/InfoCard";
 
 
 const AttractionDetailsScreen = ({ route }) => {
@@ -59,6 +60,8 @@ const AttractionDetailsScreen = ({ route }) => {
                 <Text style={styles.city}>{item?.city}</Text>
             </View>
 
+            <InfoCard text={item?.address} icon={require("../../assets/map.png")} />
+            <InfoCard text={`Open: ${item?.opening_time} - Close: ${item?.closing_time}`} icon={require("../../assets/time.png")} />
         </SafeAreaView>
     )
 }
