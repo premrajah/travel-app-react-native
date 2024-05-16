@@ -63,8 +63,7 @@ const styles = StyleSheet.create({
     textContainer: {
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center",
-
+        alignItems: "center"
     },
     title: {
         color: "#000",
@@ -74,7 +73,14 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: "400",
         color: "#000",
-        marginTop: 5
+        marginTop: 5,
+    },
+    map: {
+        width: "100%",
+        height: 200,
+        borderRadius: 10,
+        marginTop: 40,
+        marginBottom: 40
     }
 
 });
