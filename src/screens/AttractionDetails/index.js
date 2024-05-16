@@ -6,6 +6,7 @@ import Title from "../../components/Title";
 import InfoCard from "../../components/InfoCard";
 import MapView, { Marker } from 'react-native-maps';
 import { ScrollView } from "react-native-gesture-handler";
+import Share from 'react-native-share';
 
 
 const AttractionDetailsScreen = ({ route }) => {
@@ -31,6 +32,16 @@ const AttractionDetailsScreen = ({ route }) => {
         navigation.navigate("Gallery", { images: item?.images })
     }
 
+    const onShare = () => {
+        Share.open({ title: item?.name, message: "Check this out" })
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                err && console.log(err);
+            });
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -42,7 +53,7 @@ const AttractionDetailsScreen = ({ route }) => {
                         <Pressable hitSlop={8} onPress={() => onBack()}>
                             <Image style={styles.icon} source={require("../../assets/back.png")} />
                         </Pressable>
-                        <Pressable hitSlop={8}>
+                        <Pressable hitSlop={8} onPress={onShare}>
                             <Image style={styles.icon} source={require("../../assets/share.png")} />
                             { }
                         </Pressable>
