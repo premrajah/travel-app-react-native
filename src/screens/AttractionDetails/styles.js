@@ -56,6 +56,28 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 20,
 
+    },
+    headerContainer: {
+        marginVertical: 14
+    },
+    textContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+
+    },
+    title: {
+        color: "#000",
+        fontSize: 24
+    },
+    city: {
+        fontSize: 18,
+        fontWeight: "400",
+        color: "#000",
+        marginTop: 5
+    },
+    price: {
+
     }
 });
 

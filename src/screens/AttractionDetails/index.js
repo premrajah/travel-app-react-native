@@ -2,6 +2,7 @@ import React from 'react'
 import { Image, ImageBackground, Pressable, SafeAreaView, Text, View } from "react-native"
 import styles from "./styles"
 import { useNavigation } from "@react-navigation/native";
+import Title from "../../components/Title";
 
 
 const AttractionDetailsScreen = ({ route }) => {
@@ -47,9 +48,17 @@ const AttractionDetailsScreen = ({ route }) => {
                         </View>
                     ))}
                 </Pressable>
-
             </ImageBackground>
-            <Text>{item.name}</Text>
+
+
+            <View style={styles.headerContainer}>
+                <View style={styles.textContainer}>
+                    <Title style={styles.title} text={item?.name} />
+                    <Title style={styles.title} text={item?.entry_price} />
+                </View>
+                <Text style={styles.city}>{item?.city}</Text>
+            </View>
+
         </SafeAreaView>
     )
 }
