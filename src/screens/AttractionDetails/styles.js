@@ -80,6 +80,13 @@ const styles = StyleSheet.create({
         height: 200,
         borderRadius: 10,
         marginTop: 40,
+        marginBottom: 8,
+    },
+    mapText: {
+        fontSize: 16,
+        fontWeight: "bold",
+        textAlign: "center",
+        color: "#4681A3",
         marginBottom: 40
     }
 

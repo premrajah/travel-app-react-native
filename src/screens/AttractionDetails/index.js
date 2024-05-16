@@ -85,6 +85,8 @@ const AttractionDetailsScreen = ({ route }) => {
                         description={item?.city}
                     />
                 </MapView>
+
+                <Text style={styles.mapText} onPress={() => navigation.navigate("Map", { item })}>Show Fullscreen Map</Text>
             </ScrollView>
         </SafeAreaView>
     )
