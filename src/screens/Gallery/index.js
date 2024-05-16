@@ -3,10 +3,11 @@ import { SafeAreaView, Text } from "react-native"
 import styles from "./styles"
 
 
-const GalleryScreen = () => {
+const GalleryScreen = ({ route }) => {
+    const { images } = route.params;
     return (
         <SafeAreaView style={styles.container}>
-            <Text>Hello Attraction</Text>
+            <Text>Hello Gallery</Text>
         </SafeAreaView>
     )
 }

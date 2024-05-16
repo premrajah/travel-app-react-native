@@ -24,12 +24,6 @@ const styles = StyleSheet.create({
         height: 25,
         margin: 16
     },
-    minImages: {
-        width: 40,
-        height: 40,
-        margin: 8,
-        borderRadius: 10
-    },
     footer: {
         flexDirection: "row",
         justifyContent: "center",
@@ -38,6 +32,30 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         margin: 16,
         paddingHorizontal: 8
+    },
+    miniImage: {
+        width: 40,
+        height: 40,
+        margin: 8,
+        borderRadius: 10,
+        marginVertical: 10
+    },
+    moreImageWrapper: {
+        position: "absolute",
+        top: 14,
+        left: 13,
+        backgroundColor: "rgba(0,0,0,0.4)",
+        padding: 4,
+        borderRadius: 10,
+        justifyContent: "center",
+        alignItems: "center"
+
+    },
+    moreImages: {
+        color: "#ffffff",
+        fontWeight: "bold",
+        fontSize: 20,
+
     }
 });
 

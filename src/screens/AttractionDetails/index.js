@@ -7,10 +7,16 @@ import { useNavigation } from "@react-navigation/native";
 const AttractionDetailsScreen = ({ route }) => {
     const { item } = route?.params || {};
     const mainImage = item?.images?.length ? item?.images[0] : null;
+    const slicedImages = item?.images?.length ? item?.images?.slice(0, 5) : null;
+    const diffImages = item?.images?.length - slicedImages?.length;
     const navigation = useNavigation();
 
     const onBack = () => {
         navigation.goBack();
+    }
+
+    const onGalleryNavigate = () => {
+        navigation.navigate("Gallery", { images: item?.images })
     }
 
     return (
@@ -25,14 +31,22 @@ const AttractionDetailsScreen = ({ route }) => {
                     </Pressable>
                     <Pressable hitSlop={8}>
                         <Image style={styles.icon} source={require("../../assets/share.png")} />
+                        { }
                     </Pressable>
                 </View>
 
-                <View style={styles.footer}>
-                    {item?.images?.length ? item?.images?.map((image, index) => (
-                        <Image key={index} source={{ uri: image }} style={styles.minImages} />
-                    )) : null}
-                </View>
+                <Pressable onPress={onGalleryNavigate} style={styles.footer}>
+                    {slicedImages?.map((image, index) => (
+                        <View key={index}>
+                            <Image source={{ uri: image }} style={styles.miniImage} />
+                            {(diffImages > 0) && (index === slicedImages?.length - 1)
+                                ? <View style={styles.moreImageWrapper}>
+                                    <Text style={styles.moreImages}>{`+${diffImages}`}</Text>
+                                </View>
+                                : null}
+                        </View>
+                    ))}
+                </Pressable>
 
             </ImageBackground>
             <Text>{item.name}</Text>
