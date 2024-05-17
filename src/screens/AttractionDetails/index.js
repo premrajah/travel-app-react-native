@@ -7,6 +7,7 @@ import InfoCard from "../../components/InfoCard";
 import MapView, { Marker } from 'react-native-maps';
 import { ScrollView } from "react-native-gesture-handler";
 import Share from 'react-native-share';
+import ImgToBase64 from 'react-native-image-base64';
 
 
 const AttractionDetailsScreen = ({ route }) => {
@@ -24,6 +25,7 @@ const AttractionDetailsScreen = ({ route }) => {
 
     }
 
+
     const onBack = () => {
         navigation.goBack();
     }
@@ -32,14 +34,24 @@ const AttractionDetailsScreen = ({ route }) => {
         navigation.navigate("Gallery", { images: item?.images })
     }
 
-    const onShare = () => {
-        Share.open({ title: item?.name, message: "Check this out" })
-            .then((res) => {
-                console.log(res);
-            })
-            .catch((err) => {
-                err && console.log(err);
+    const onShare = async () => {
+
+        try {
+            const imageWithoutExtension = mainImage?.split('?')[0];
+            const imageParts = imageWithoutExtension.split('.');
+            const imageExtension = imageParts[imageParts?.length - 1];
+
+            const base64Image = await ImgToBase64.getBase64String(mainImage);
+            const shareOpen = await Share.open({
+                title: item?.name,
+                message: "Check this out",
+                url: `data:image/${imageExtension || 'jpg'};base64,${base64Image}`
             });
+        } catch (error) {
+            console.log("Sharing error ", error);
+        }
+
+
     }
 
     return (
